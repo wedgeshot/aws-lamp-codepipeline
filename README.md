@@ -1,6 +1,6 @@
 # Codecommit deploy CFT via codepipline.
 
-# Assumptions
+Assumptions
  - You have git installed
  - You are on a OSX or Linux machine
  - Your AWS IAM user have programmatic access
