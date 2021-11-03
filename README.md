@@ -1,14 +1,14 @@
 # Codecommit deploy CFT via codepipline.
 
 Assumptions
- - You have git installed
+ - You have git and extras for codecommit installed
  - You are on a OSX or Linux machine
- - Your AWS IAM user have programmatic access
+ - Your AWS IAM user has programmatic access configured
 
-1. Copy the yaml file from github
-2. Create a codecommit repository
+1. Copy the yaml file from github.
+2. Create a codecommit repository and commit the yaml file to the repo.
 3. Go to AWS IAM in console and for your user and Click "Attach existing policies" and add AWSCodeCommitFullAccess.
-4. In a terminal ``` ssh -y -t rsa -f ~/.ssh/codecommit_rsa ```  
+4. In a terminal ``` ssh -y -t rsa -f ~/.ssh/codecommit_rsa ``` . This generates the ssh key pair
 5. Go to AWS IAM console and for your user, in the third tab "Security Credentials" clikc upload your SSH public key and paste the contents of your public key.
 6. On your local machine edit ~/.ssh/config  and create a Host entry for git-codecommit.*.amazonaws.com, User <your USER-KEY-ID> and IndentityFile ~/.ssh/codecommit_rsa
 7. Now commit the Cloudformation yaml file to your codecommit repository.
